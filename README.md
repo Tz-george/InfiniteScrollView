@@ -308,3 +308,6 @@ final class InfiniteScrollViewManager {
 }
 ```
 代码相对简单，我就不展开了。
+
+详细代码可以去我的github上查看：
+[github](https://github.com/Tz-george/InfiniteScrollView)

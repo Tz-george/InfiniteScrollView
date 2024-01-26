@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E85F2402B63AEFC00E7D613 /* contentGeometry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E85F23B2B63AEFC00E7D613 /* contentGeometry.jpg */; };
-		5E85F2412B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.20.34.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E85F23C2B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.20.34.png */; };
-		5E85F2422B63AEFC00E7D613 /* Simulator Screen Recording - iPhone 15 Pro - 2024-01-26 at 15.38.46.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E85F23D2B63AEFC00E7D613 /* Simulator Screen Recording - iPhone 15 Pro - 2024-01-26 at 15.38.46.gif */; };
-		5E85F2432B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.37.19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E85F23E2B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.37.19.png */; };
-		5E85F2442B63AEFC00E7D613 /* 无限滚动scrollView.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E85F23F2B63AEFC00E7D613 /* 无限滚动scrollView.md */; };
 		5EFED40C2B58F2850083128A /* InfiniteScrollViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED40B2B58F2850083128A /* InfiniteScrollViewApp.swift */; };
 		5EFED40E2B58F2850083128A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED40D2B58F2850083128A /* ContentView.swift */; };
 		5EFED4102B58F2860083128A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFED40F2B58F2860083128A /* Assets.xcassets */; };
@@ -19,11 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5E85F23B2B63AEFC00E7D613 /* contentGeometry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = contentGeometry.jpg; sourceTree = "<group>"; };
-		5E85F23C2B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.20.34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.20.34.png"; sourceTree = "<group>"; };
-		5E85F23D2B63AEFC00E7D613 /* Simulator Screen Recording - iPhone 15 Pro - 2024-01-26 at 15.38.46.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Simulator Screen Recording - iPhone 15 Pro - 2024-01-26 at 15.38.46.gif"; sourceTree = "<group>"; };
-		5E85F23E2B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.37.19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.37.19.png"; sourceTree = "<group>"; };
-		5E85F23F2B63AEFC00E7D613 /* 无限滚动scrollView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "无限滚动scrollView.md"; sourceTree = "<group>"; };
 		5EFED4082B58F2850083128A /* InfiniteScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFED40B2B58F2850083128A /* InfiniteScrollViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewApp.swift; sourceTree = "<group>"; };
 		5EFED40D2B58F2850083128A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,17 +33,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E85F23A2B63AEFC00E7D613 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				5E85F23B2B63AEFC00E7D613 /* contentGeometry.jpg */,
-				5E85F23C2B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.20.34.png */,
-				5E85F23D2B63AEFC00E7D613 /* Simulator Screen Recording - iPhone 15 Pro - 2024-01-26 at 15.38.46.gif */,
-				5E85F23E2B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.37.19.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		5EFED3FF2B58F2850083128A = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +52,6 @@
 		5EFED40A2B58F2850083128A /* InfiniteScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				5E85F23F2B63AEFC00E7D613 /* 无限滚动scrollView.md */,
-				5E85F23A2B63AEFC00E7D613 /* images */,
 				5EFED40B2B58F2850083128A /* InfiniteScrollViewApp.swift */,
 				5EFED40D2B58F2850083128A /* ContentView.swift */,
 				5EFED40F2B58F2860083128A /* Assets.xcassets */,
@@ -150,13 +127,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E85F2432B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.37.19.png in Resources */,
 				5EFED4142B58F2860083128A /* Preview Assets.xcassets in Resources */,
 				5EFED4102B58F2860083128A /* Assets.xcassets in Resources */,
-				5E85F2442B63AEFC00E7D613 /* 无限滚动scrollView.md in Resources */,
-				5E85F2402B63AEFC00E7D613 /* contentGeometry.jpg in Resources */,
-				5E85F2422B63AEFC00E7D613 /* Simulator Screen Recording - iPhone 15 Pro - 2024-01-26 at 15.38.46.gif in Resources */,
-				5E85F2412B63AEFC00E7D613 /* Simulator Screenshot - iPhone 15 Pro - 2024-01-26 at 15.20.34.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

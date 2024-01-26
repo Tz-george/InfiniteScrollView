@@ -12,14 +12,14 @@ struct ContentView: View {
     @State private var manager = InfiniteScrollViewManager()
     
     var body: some View {
-//        ZStack(alignment: .bottomTrailing) {
+        ZStack(alignment: .bottomTrailing) {
             InfiniteScrollView(manager: manager)
-//            Button("back to") {
-//                manager.backCenter()
-//            }
-//            .buttonStyle(.bordered)
-//            .padding()
-//        }
+            Button("back to") {
+                manager.backCenter()
+            }
+            .buttonStyle(.bordered)
+            .padding()
+        }
     }
 }
 
@@ -65,8 +65,8 @@ struct InfiniteScrollView: UIViewRepresentable {
             self.scrollView = scrollView
             scrollView.delegate = self
             scrollView.scrollsToTop = false
-            scrollView.showsVerticalScrollIndicator = false
-            scrollView.showsHorizontalScrollIndicator = false
+//            scrollView.showsVerticalScrollIndicator = false
+//            scrollView.showsHorizontalScrollIndicator = false
             resetOffset()
         }
         
@@ -166,7 +166,7 @@ struct InfiniteScrollView: UIViewRepresentable {
             )
             populateTiles()
         }
-        
+
         // 停止拖拽
         func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
             if (!decelerate) {
@@ -194,6 +194,35 @@ final class InfiniteScrollViewManager {
         scrollView.setContentOffset(CGPoint(
             x: (scrollView.contentSize.width - scrollView.frame.size.width) / 2 + coordinator.offset.x + coordinator.deltaOffset.x,
             y: (scrollView.contentSize.height - scrollView.frame.size.height) / 2 + coordinator.offset.y + coordinator.deltaOffset.y), animated: true)
+    }
+}
+
+class GridLayer: CALayer {
+    
+    override func draw(in ctx: CGContext) {
+        print("draw", bounds)
+        // 设置网格线的颜色
+        ctx.setStrokeColor(UIColor.gray.cgColor)
+        
+        // 设置网格线的宽度
+        ctx.setLineWidth(0.5)
+        
+        // 绘制垂直网格线
+        for i in 1..<Int(bounds.width) {
+            let x = CGFloat(i) * bounds.width / CGFloat(Int(bounds.width))
+            ctx.move(to: CGPoint(x: x, y: 0))
+            ctx.addLine(to: CGPoint(x: x, y: bounds.height))
+        }
+        
+        // 绘制水平网格线
+        for i in 1..<Int(bounds.height) {
+            let y = CGFloat(i) * bounds.height / CGFloat(Int(bounds.height))
+            ctx.move(to: CGPoint(x: 0, y: y))
+            ctx.addLine(to: CGPoint(x: bounds.width, y: y))
+        }
+        
+        // 执行绘制操作
+        ctx.strokePath()
     }
 }
 

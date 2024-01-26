@@ -123,26 +123,31 @@ origin是一个UIView的左上角坐标，但这个坐标是一个绝对坐标�
 由于我们设tile(0,0)为中心tile，所以在不考虑移动的情况下可以计算出来tile(0,0)的坐标为：
 
 x: scrollView.contentSize.width / 2 - tileSize.width / 2
+
 y: scrollView.contentSize.height / 2 - tileSize.height / 2
 
 优化一下，使用结合律：
 
 x: (scrollView.contentSize.width - tileSize.width) / 2
+
 y: (scrollView.contentSize.height - tileSize.height) / 2
 
 假设加上移动，则x，y各项需要再加上offset的x，y值，则坐标为：
 
 x: (scrollView.contentSize.width - tileSize.width) / 2 + offset.x
+
 y: (scrollView.contentSize.height - tileSize.height) / 2 + offset.y
 
 接下来我们计算一下tile(1,1)的坐标，tile(1,1)的坐标应当在tile(0,0)的右下方，也就是tile(0,0)坐标向右下方偏移一个tileSize的距离，即：
 
 x: (scrollView.contentSize.width - tileSize.width) / 2 + offset.x + tileSize.width
+
 y: (scrollView.contentSize.height - tileSize.height) / 2 + offset.y + tileSize.height
 
 由此可知tile(x,y)的坐标应当为：
 
 x: (scrollView.contentSize.width - tileSize.width) / 2 + offset.x + x * tileSize.width
+
 y: (scrollView.contentSize.height - tileSize.height) / 2 + offset.y + y * tileSize.height
 
 接下来就让我们看看我们的tile坐标绘制是否正确吧，在UIViewRepresentable的updateView中增加以下代码，先绘制一个中心tile出来：
@@ -277,15 +282,20 @@ func removeTiles(rows: ClosedRange<Int>, cols: ClosedRange<Int>) {
 
 假设没有offset的情况下，由于中心tile的编号为(0,0)，所以左上角tile的编号应该是
 x: Int(-frame.size.width / 2 / tileSize.width)
+
 y: Int(-frame.size.height / 2 / tileSize.height)
 这表示了左上角tile相对于tile(0,0)的偏移量，同理右下角tile的编号应该是：
 x: Int(frame.size.width / 2 / tileSize.width)
+
 y: Int(frame.size.heigth / 2 / tileSize.height)
 因为绘制的范围从-frame.size / 2 ~ frame.size / 2（以中心分割），所以加上偏移量后应当为：
 
 left: Int(round((-frame.width / 2 - offset.x - deltaOffset.x) / tileSize.width))
+
 right: Int(round((frame.width / 2 - offset.x - deltaOffset.x) / tileSize.width))
+
 top: Int(round((-frame.height / 2 - offset.y - deltaOffset.y) / tileSize.height))
+
 bottom: Int(round((frame.height / 2 - offset.y - deltaOffset.y) / tileSize.height))
 
 offset偏移量只在scrollView停止滚动后刷新，deltaOffset则记录了滚动时的偏移量。
